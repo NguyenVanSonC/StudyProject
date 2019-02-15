@@ -230,16 +230,14 @@
                     <li class="treeview">
                         <a href="#">
                             <i class="fa fa-files-o"></i>
-                            <span>Layout Options</span>
+                            <span>Sản Phẩm</span>
                             <span class="pull-right-container">
                                 <span class="label label-primary pull-right">4</span>
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="../layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-                            <li><a href="../layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-                            <li><a href="../layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-                            <li><a href="../layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+                            <li><a ui-sref="products"><i class="fa fa-circle-o"></i>Sản Phẩm</a></li>
+                            <li><a ui-sref="product_categories"><i class="fa fa-circle-o"></i> Danh Mục Sản Phẩm</a></li>
                         </ul>
                     </li>
                     <li>
@@ -619,10 +617,13 @@
     <script src="~/app/app.js"></script>
     <script src="~/app/componnents/products/products.module.js"></script>
     <script src="~/app/shared/modules/tedushop.common.js"></script>
+    <script src="~/app/shared/services/apiService.js"></script>
+    <script src="~/app/componnents/product_categories/productCategories.module.js"></script>
 
     <script src="~/app/componnents/products/productAddController.js"></script>
     <script src="~/app/componnents/products/productListController.js"></script>
     <script src="~/app/componnents/home/homeController.js"></script>
+    <script src="~/app/componnents/product_categories/productCategoryListController.js"></script>
     <script>
         $(document).ready(function () {
             $('.sidebar-menu').tree()

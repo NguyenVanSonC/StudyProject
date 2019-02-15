@@ -180,6 +180,7 @@
   <ItemGroup>
     <Compile Include="Api\AccountController.cs" />
     <Compile Include="Api\PostCategoryController.cs" />
+    <Compile Include="Api\ProductCategoryController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -198,6 +199,9 @@
     <Compile Include="Models\PostCategoryViewModel.cs" />
     <Compile Include="Models\PostTagViewModel.cs" />
     <Compile Include="Models\PostViewModel.cs" />
+    <Compile Include="Models\ProductCategoryViewModel.cs" />
+    <Compile Include="Models\ProductTagViewModel.cs" />
+    <Compile Include="Models\ProductViewModel.cs" />
     <Compile Include="Models\TagViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -212,7 +216,11 @@
     <Content Include="app\componnents\products\productListController.js" />
     <Content Include="app\componnents\products\productListView.html" />
     <Content Include="app\componnents\products\productAddView.html" />
+    <Content Include="app\componnents\product_categories\productCategories.module.js" />
+    <Content Include="app\componnents\product_categories\productCategoryListController.js" />
+    <Content Include="app\componnents\product_categories\productCategoryListView.html" />
     <Content Include="app\shared\modules\tedushop.common.js" />
+    <Content Include="app\shared\services\apiService.js" />
     <Content Include="Assets\admin\css\AdminLTE.css" />
     <Content Include="Assets\admin\css\AdminLTE.min.css" />
     <Content Include="Assets\admin\css\alt\AdminLTE-bootstrap-social.css" />
@@ -1785,12 +1793,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\componnents\orders\" />
-    <Folder Include="app\componnents\product_categories\" />
     <Folder Include="app\componnents\roles\" />
     <Folder Include="app\componnents\users\" />
     <Folder Include="app\shared\footer\" />
     <Folder Include="app\shared\navigation\" />
-    <Folder Include="app\shared\services\" />
     <Folder Include="Assets\admin\libs\slimScroll\examples\" />
     <Folder Include="Assets\client\" />
     <Folder Include="Scripts\" />

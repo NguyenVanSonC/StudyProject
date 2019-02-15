@@ -1,3 +1,5 @@
+﻿using System.Collections.Generic;
+
 namespace TeduShop.Data.Migrations
 {
     using Microsoft.AspNet.Identity;
@@ -17,7 +19,7 @@ namespace TeduShop.Data.Migrations
 
         protected override void Seed(TeduShop.Data.TeduShopDbContext context)
         {
-            var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new TeduShopDbContext()));
+            /*var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new TeduShopDbContext()));
 
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new TeduShopDbContext()));
 
@@ -42,6 +44,25 @@ namespace TeduShop.Data.Migrations
             var adminUser = manager.FindByEmail("tedu.international@gmail.com");
 
             manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
+            */
+            CreateProductCategorySample(context);
+        }
+
+        private void CreateProductCategorySample(TeduShop.Data.TeduShopDbContext context)
+        {
+            if (context.ProductCategories.Count()==0)
+            {
+                List<ProductCategory> listProductCategories = new List<ProductCategory>()
+                {
+                    new ProductCategory(){Name = "Điện Lạnh", Alias = "dien-lanh", Status = true},
+                    new ProductCategory(){Name = "Viễn Thông", Alias = "vien-thong", Status = true},
+                    new ProductCategory(){Name = "Đồ gia dụng", Alias = "do-gia-dung", Status = true},
+                    new ProductCategory(){Name = "Mỹ Phẩm", Alias = "my-pham", Status = true}
+                };
+
+                context.ProductCategories.AddRange(listProductCategories);
+                context.SaveChanges();
+            }
         }
     }
 }
