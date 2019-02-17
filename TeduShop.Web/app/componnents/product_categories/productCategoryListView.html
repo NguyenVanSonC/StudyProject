@@ -35,11 +35,16 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-6">
+                    <button class="btn btn-success" ui-sref="add_product_category">Thêm Mới</button>
+                    <button class="btn btn-danger" ng-click="deleteMultiple()" id="btnDelete" disabled>Xóa</button>
+                </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <table class="table table-bordered">
                         <tr>
+                            <th><label><input name="all" type="checkbox" ng-click="SelectAll()"/>Chọn tất cả</label></th>
                             <th style="width: 5%">ID</th>
                             <th style="width: 50%">Tên Dạnh Mục</th>
                             <th style="width: 20%">Ngày tạo</th>
@@ -47,6 +52,7 @@
                             <th style="width: 10px">Thao Tác</th>
                         </tr>
                         <tr ng-repeat="item in productCategories">
+                            <td><input type="checkbox" ng-model="item.checked" name="all"/></td>
                             <td>{{item.ID}}</td>
                             <td>{{item.Name}}</td>
                             <td>
@@ -58,18 +64,20 @@
                                 </span>
                             </td>
                             <td>
-                                <button class="btn btn-sm btn-primary">
+                                <button class="btn btn-sm btn-primary" ui-sref="edit_product_category({id:item.ID})">
                                     <i class="fa fa-pencil"></i>
                                 </button>
-                                <button class="btn btn-sm btn-danger">
+                                <button class="btn btn-sm btn-danger" ng-click="deleteProductCategory(item.ID)">
                                     <i class="fa fa-trash"></i>
                                 </button>
                             </td>
                         </tr>
                         <tfoot>
                         <tr>
-                            <td colspan="4">
-                                Tổng số bản ghi: {{totalCount}}
+                            <td colspan="5">
+                                <span class="pull-right">
+                                    Trang : {{page+1}} - Tổng số bản ghi: {{totalCount}}
+                                </span>
                             </td>
                         </tr>
                         </tfoot>

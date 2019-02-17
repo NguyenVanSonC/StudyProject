@@ -45,7 +45,8 @@ namespace TeduShop.Data.Migrations
 
             manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
             */
-            CreateProductCategorySample(context);
+            //CreateProductCategorySample(context);
+            CreateProductSample(context);
         }
 
         private void CreateProductCategorySample(TeduShop.Data.TeduShopDbContext context)
@@ -61,6 +62,25 @@ namespace TeduShop.Data.Migrations
                 };
 
                 context.ProductCategories.AddRange(listProductCategories);
+                context.SaveChanges();
+            }
+        }
+
+        private void CreateProductSample(TeduShop.Data.TeduShopDbContext context)
+        {
+            if (context.Products.Count() == 0)
+            {
+                List<Product> listProducts = new List<Product>()
+                {
+                    new Product(){Name = "Tủ Lạnh", CategoryID = 4, Alias = "do-gia-dung",Price = 100, Status = true},
+                    new Product(){Name = "Ti Vi", CategoryID = 4, Alias = "do-gia-dung",Price = 500, Status = true},
+                    new Product(){Name = "Bàn ghế", CategoryID = 4, Alias = "do-gia-dung",Price = 200, Status = true},
+                    new Product(){Name = "Xe máy", CategoryID = 4, Alias = "do-gia-dung",Price = 400, Status = true},
+                    new Product(){Name = "ô tô", CategoryID = 4, Alias = "do-gia-dung",Price = 200, Status = true},
+                    new Product(){Name = "Loa", CategoryID = 4, Alias = "do-gia-dung",Price = 700, Status = true}
+                };
+
+                context.Products.AddRange(listProducts);
                 context.SaveChanges();
             }
         }

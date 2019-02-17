@@ -255,7 +255,7 @@ ServiceFabricBackup/
 
 # Microsoft Fakes
 FakesAssemblies/
-
+UploadedFiles/*
 # GhostDoc plugin setting file
 *.GhostDoc.xml
 
