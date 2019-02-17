@@ -14,7 +14,7 @@
             $http.get(url, params).then(function (result) {
                 success(result);
             }, function (error) {
-                failure(error);
+                failure(error); 
             });
         }
     }
